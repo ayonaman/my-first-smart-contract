@@ -2,11 +2,6 @@
 pragma solidity ^0.8.0;
 
 contract HotelRoom {
-    // Ether payments
-    // Modifires
-    // Visibility
-    // Events
-    // Enums
     enum Statuses{
         Vacant, 
         Occupied
@@ -34,7 +29,7 @@ contract HotelRoom {
     function book() payable public onlyWhileVacant costs(2 ether) {
         currentStatus = Statuses.Occupied;
         
-        (bool sent, bytes memory data) = owner.call{value: msg.value}(" "); //check the transfer is sent or not(start me bool aur data ka ask hai jo).
+        (bool sent, bytes memory data) = owner.call{value: msg.value}(" ");
         require(true);
 
         emit occupy(msg.sender, msg.value);
